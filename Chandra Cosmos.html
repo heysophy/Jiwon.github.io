@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chandra Cosmos</title>
+    <style>
+      /* Add your CSS here */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #0a1e3f;
+        color: white;
+      }
+      .hero {
+        text-align: center;
+        padding: 60px;
+        background-image: url("path/to/your/hero-image.jpg");
+        background-size: cover;
+        color: white;
+      }
+      .content {
+        padding: 20px;
+        text-align: center;
+      }
+      .item-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .item {
+        background-color: #1b2a4e;
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+        text-align: center;
+      }
+      footer {
+        background-color: #061229;
+        padding: 10px;
+        text-align: center;
+      }
+      @media screen and (max-width: 600px) {
+        .item-gallery {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Chandra Cosmos</h1>
+      <p>Exploring the Universe through the Chandra X-ray Observatory</p>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content">
+      <h2>Introduction</h2>
+      <p>
+        Welcome to Chandra Cosmos, an interactive journey through the life cycle
+        of stars. Dive into the universe's most mysterious phenomena, visualized
+        in stunning 3D models from the Chandra X-ray Observatory.
+      </p>
+    </section>
+
+    <!-- Items Gallery Section -->
+    <section class="content">
+      <h2>3D Model Gallery</h2>
+      <div class="item-gallery">
+        <!-- Item 1: Crab Nebula -->
+        <div class="item">
+          <h3>Crab Nebula</h3>
+          <p>
+            A supernova remnant showcasing a neutron star at its center,
+            emitting pulsations 30 times per second.
+          </p>
+          <img src="path/to/crab_nebula_image1.jpg" alt="Crab Nebula" />
+          <img src="path/to/crab_nebula_image2.jpg" alt="Crab Nebula" />
+          <img src="path/to/crab_nebula_image3.jpg" alt="Crab Nebula" />
+          <div>
+            <!-- Placeholder for 3D model viewer -->
+            <model-viewer
+              src="path/to/crab_nebula_model.glb"
+              alt="Crab Nebula 3D Model"
+              auto-rotate
+              camera-controls
+            ></model-viewer>
+          </div>
+        </div>
+
+        <!-- Item 2: Tycho Supernova Remnant -->
+        <div class="item">
+          <h3>Tycho Supernova Remnant</h3>
+          <p>
+            Observed by Tycho Brahe in 1572, it reveals an expanding shell of
+            material without a central neutron star.
+          </p>
+          <img src="path/to/tycho_image1.jpg" alt="Tycho Supernova Remnant" />
+          <img src="path/to/tycho_image2.jpg" alt="Tycho Supernova Remnant" />
+          <img src="path/to/tycho_image3.jpg" alt="Tycho Supernova Remnant" />
+          <div>
+            <model-viewer
+              src="path/to/tycho_model.glb"
+              alt="Tycho Supernova 3D Model"
+              auto-rotate
+              camera-controls
+            ></model-viewer>
+          </div>
+        </div>
+
+        <!-- Item 3: Vela Supernova Remnant -->
+        <div class="item">
+          <h3>Vela Supernova Remnant</h3>
+          <p>
+            Highlights a pulsar at the center, emitting powerful beams and a jet
+            of particles at near-light speed.
+          </p>
+          <img src="path/to/vela_image1.jpg" alt="Vela Supernova Remnant" />
+          <img src="path/to/vela_image2.jpg" alt="Vela Supernova Remnant" />
+          <img src="path/to/vela_image3.jpg" alt="Vela Supernova Remnant" />
+          <div>
+            <model-viewer
+              src="path/to/vela_model.glb"
+              alt="Vela Supernova 3D Model"
+              auto-rotate
+              camera-controls
+            ></model-viewer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2024 Chandra Cosmos - All Rights Reserved</p>
+    </footer>
+
+    <!-- Scripts for 3D Model Viewer -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+  </body>
+</html>
