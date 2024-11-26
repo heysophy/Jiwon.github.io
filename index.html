@@ -304,11 +304,11 @@
 
       .supernova-item {
         display: flex;
-        gap: 40px;
+        flex-direction: column;
+        gap: 30px;
         background: #1b2a4e;
         padding: 30px;
         border-radius: 12px;
-        align-items: center;
       }
 
       .image-column {
@@ -645,6 +645,40 @@
           font-size: 1.2rem;
         }
       }
+
+      /* Add these styles in your <style> section */
+      .model-placeholder {
+        width: 100%;
+        background: #1b2a4e;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        aspect-ratio: 16/9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px dashed #3a5198;
+      }
+
+      .placeholder-content {
+        text-align: center;
+        color: #ffffff80;
+      }
+
+      .placeholder-text {
+        font-family: "Smooch Sans", sans-serif;
+        font-size: 24px;
+      }
+
+      /* Adjust responsive design */
+      @media screen and (max-width: 768px) {
+        .model-placeholder {
+          margin-bottom: 20px;
+        }
+
+        .placeholder-text {
+          font-size: 20px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -744,6 +778,12 @@
       <div class="supernova-gallery">
         <!-- Supernova 1: V745 SCO -->
         <div class="supernova-item">
+          <div class="model-placeholder">
+            <div class="placeholder-content">
+              <span class="placeholder-text">3D Model Coming Soon</span>
+            </div>
+          </div>
+
           <div class="image-column">
             <div class="image-scroll-container">
               <button class="scroll-btn prev-btn">❮</button>
@@ -782,6 +822,12 @@
 
         <!-- Supernova 2: Tycho Supernova Remnant -->
         <div class="supernova-item">
+          <div class="model-placeholder">
+            <div class="placeholder-content">
+              <span class="placeholder-text">3D Model Coming Soon</span>
+            </div>
+          </div>
+
           <div class="image-column">
             <div class="image-scroll-container">
               <button class="scroll-btn prev-btn">❮</button>
@@ -823,6 +869,12 @@
 
         <!-- Supernova 3: 1987A -->
         <div class="supernova-item">
+          <div class="model-placeholder">
+            <div class="placeholder-content">
+              <span class="placeholder-text">3D Model Coming Soon</span>
+            </div>
+          </div>
+
           <div class="image-column">
             <div class="image-scroll-container">
               <button class="scroll-btn prev-btn">❮</button>
