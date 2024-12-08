@@ -1,0 +1,866 @@
+body {
+  font-family: "Smooch Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 24px;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: white;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      white,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 2px
+    ),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.1) 2px,
+      transparent 2px
+    );
+  background-size: 350px 350px, 200px 200px, 150px 150px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+  z-index: -1;
+  animation: twinkle 8s infinite;
+}
+
+/* Add twinkling animation */
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+h1 {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-size: 120px;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 20px 0;
+  background-size: cover;
+  color: white;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.hero-img {
+  width: 100vw;
+  height: auto;
+  margin: 20px 0;
+  display: block;
+  object-fit: cover;
+}
+
+/* Content Section */
+.content {
+  padding: 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Item Gallery */
+.item-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  background-color: rgba(27, 42, 78, 0.7);
+  padding: 30px;
+  border-radius: 8px;
+  gap: 30px;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.item-images {
+  flex: 1;
+  min-width: 45%;
+}
+
+.item-content {
+  flex: 1;
+  text-align: left;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(6, 18, 41, 0.9);
+  padding: 10px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+  .content {
+    padding: 15px;
+  }
+
+  .item {
+    width: calc(50% - 40px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  .hero {
+    padding: 10px 0;
+  }
+
+  .hero-img {
+    width: 100vw;
+  }
+
+  .item {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .item-content {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .item-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .hero-img {
+      max-width: 100%;
+    }
+  }
+}
+
+/* Two-column layout styles */
+.two-column-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  gap: 40px;
+  align-items: center;
+}
+
+.image-column {
+  flex: 1;
+}
+
+.image-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.text-column {
+  flex: 1;
+  text-align: left;
+}
+
+.text-column h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .two-column-layout {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .text-column {
+    text-align: center;
+  }
+}
+
+.timeline-section {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.timeline-title {
+  text-align: center;
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-size: 40px;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.timeline-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.timeline-item {
+  background: #1b2a4e;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.timeline-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.timeline-content {
+  padding: 20px;
+}
+
+.timeline-content h3 {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-size: 40px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+}
+
+.supernova-section {
+  padding: 60px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-size: 40px;
+  font-style: italic;
+  margin-bottom: 50px;
+}
+
+.supernova-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.supernova-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #1b2a4e;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.image-column {
+  flex: 3;
+  min-width: 60%;
+}
+
+.image-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.text-column {
+  flex: 2;
+}
+
+.text-column h3 {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-size: 32px;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.text-column p {
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 24px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.view-3d-btn {
+  background: #2a4178;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.view-3d-btn:hover {
+  background: #3a5198;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .supernova-item {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .image-column {
+    min-width: 100%;
+  }
+
+  .text-column {
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .text-column h3 {
+    font-size: 30px;
+  }
+
+  .text-column p {
+    font-size: 20px;
+  }
+}
+
+/* Add these styles in your <style> section */
+.navbar {
+  background-color: rgba(6, 18, 41, 0.9);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.nav-brand {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-size: 2.5rem;
+  font-style: italic;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #3a5198;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(8px);
+}
+
+/* Add this to your existing styles */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add some padding to account for the fixed navbar */
+section[id] {
+  scroll-margin-top: 80px; /* Adjust this value based on your navbar height */
+}
+
+/* Add these styles for the horizontal image scroll */
+.image-scroll-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 15px;
+  padding-bottom: 15px; /* Space for scrollbar */
+}
+
+.image-scroll img {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Customize scrollbar */
+.image-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.image-scroll::-webkit-scrollbar-track {
+  background: #0a1e3f;
+  border-radius: 4px;
+}
+
+.image-scroll::-webkit-scrollbar-thumb {
+  background: #3a5198;
+  border-radius: 4px;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(6, 18, 41, 0.8);
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.scroll-indicator .arrow {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(6, 18, 41, 0.8);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background: rgba(58, 81, 152, 0.8);
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Update image-scroll-container for button positioning */
+.image-scroll-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-scroll img {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .scroll-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
+/* Update navbar styles */
+.nav-brand {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-size: 2.5rem;
+  font-style: italic;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  .nav-brand {
+    font-size: 2.2rem;
+  }
+
+  .nav-menu {
+    gap: 1.5rem; /* Reduced gap between nav items */
+  }
+
+  .nav-menu a {
+    font-size: 1.2rem; /* Smaller font size */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-brand {
+    font-size: 1.5rem;
+  }
+
+  .nav-menu {
+    gap: 1rem; /* Further reduced gap */
+  }
+
+  .nav-menu a {
+    font-size: 1rem; /* Even smaller font size */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-menu {
+    gap: 0.8rem; /* Minimal gap for smallest screens */
+  }
+
+  .nav-menu a {
+    font-size: 0.9rem; /* Smallest font size */
+  }
+}
+
+.model-placeholder {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-text {
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 24px;
+}
+
+model-viewer {
+  width: 100%;
+  height: 600px;
+  background-color: #1b2735;
+  --poster-color: transparent;
+  z-index: 1;
+}
+
+.model-placeholder {
+  width: 100%;
+  min-height: 600px;
+  position: relative;
+  z-index: 1;
+  background: rgba(27, 39, 53, 0.5);
+  border-radius: 8px;
+}
+
+/* Navbar z-index adjustment */
+.navbar {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+/* Mobile menu adjustments */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(6, 18, 41, 0.95);
+    z-index: 99; /* Below navbar but above other content */
+  }
+}
+
+model-viewer {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-color: #1b2735;
+  --poster-color: transparent;
+}
+
+/* Progress bar for model loading */
+.progress-bar {
+  display: block;
+  width: 33%;
+  height: 10%;
+  max-height: 2px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+
+/* AR button styles */
+#ar-button {
+  background-color: #3a5198;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* Adjust responsive design */
+@media screen and (max-width: 768px) {
+  .model-placeholder {
+    margin-bottom: 20px;
+  }
+
+  .placeholder-text {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-title {
+    font-size: 32px; /* Reduced from 40px */
+  }
+
+  .timeline-content h3 {
+    font-size: 32px; /* Reduced from 40px */
+  }
+
+  .timeline-content p {
+    font-size: 18px; /* Reduced from 24px */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timeline-title {
+    font-size: 28px; /* Even smaller for very small screens */
+  }
+
+  .timeline-content h3 {
+    font-size: 28px;
+  }
+
+  .timeline-content p {
+    font-size: 16px;
+  }
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar styles */
+.navbar {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Sections */
+section {
+  padding: 4rem 2rem;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+}
